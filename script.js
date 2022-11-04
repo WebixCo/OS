@@ -14,7 +14,7 @@ function refreshTimeDesk() {
 setInterval(refreshTimeDesk, 1000);
 function openWeb() {
   new WinBox("Flame Browser", {
-    url: "https://onyxos.samdevsapps.repl.co/apps/browser/index.html",
+    url: "./apps/browser/index.html",
     icon: "apps/browser/flame.png",
   });
 }
@@ -56,8 +56,8 @@ function openPnt() {
 
 function openDino() {
   new WinBox("Dino Game", {
-    url: "https://onyxos.samdevsapps.repl.co/apps/Dino/",
-    icon: "https://onyxos.samdevsapps.repl.co/apps/Dino/icon.png",
+    url: "./apps/Dino/",
+    icon: "./apps/Dino/icon.png",
   });
 }
 
