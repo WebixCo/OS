@@ -1,0 +1,84 @@
+<html>
+
+<body>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <style>
+    *{
+      font-family: 'Roboto', sans-serif !important;
+    }
+  </style>
+  <style>
+    body {
+      color: white;
+      background: none;
+    }
+
+    table {
+      border-spacing: 15px !important;
+    }
+
+    td, .td-false {
+      background: #00000070;
+      border-radius: 10px;
+      width: 10vw;
+      height: 5vh;
+      gap: 10px;
+      padding: 15px;
+
+    }
+    .td-false{
+        width: 20vw !important;
+        height:auto !important;
+      }
+    .bigchar {
+      background: -webkit-linear-gradient(#243FFF, #FF9022);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: large;
+    }
+  </style><button
+    style="top:0vh;left:0%;position: absolute; padding:0px;height:23px;font-size:x-large;background:none;color:white;width:3%;border:0px;"
+    id="gobtn" onclick="window.location.href='browserhelp.html'">?</button>
+  <center>
+    <h1>Welcome<h2 id="timeDesk">loading...
+      </h2>
+    </h1>
+    <table>
+      <tbody>
+        <tr>
+          <td onclick="window.location.href = 'https://corsproxy.io/?https%3A%2F%2Fgoogle.com'"><b class="bigchar">G</b>
+            Google</td>
+          <td onclick="window.location.href = 'https://corsproxy.io/?https%3A%2F%2Fyoutube.com'"><b
+              class="bigchar">Y</b> Youtube</td>
+        </tr>
+        <tr>
+          <td onclick="window.location.href = 'https://corsproxy.io/?https%3A%2F%2Fscratch.mit.edu'"><b
+              class="bigchar">S</b>
+            Scratch</td>
+          <td onclick="window.location.href = 'https://onyxassistant.samdevsapps.repl.co/'"><b class="bigchar">O</b>
+            OnyxAssistant</td>
+        </tr>
+        <tr>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+        <tr>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="td-false"><H5>Download The Chrome Extention!</H5><p>The OnyxOS extention fixes many problems, such as the browser not working</p><button onclick="window.location.href = 'OnyxOS%20Extention%20Install%20GUIDE.html'">Download</button></div>
+    <script>function refreshTimeDesk() {
+        const timeDisplay = document.getElementById("timeDesk");
+        const dateString = new Date().toLocaleString();
+        const formattedString = dateString.replace(", ", " - ");
+        timeDisplay.textContent = "It's " + formattedString.split(" - ")[1];
+      }
+      setInterval(refreshTimeDesk, 1000);</script>
+  </center>
+</body>
+
+</html>

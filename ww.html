@@ -1,0 +1,36 @@
+<body style="background:#00000070;">
+<button onclick="askForNewLoc()" style="background:none;border:none;">⚙️</button>
+<a style="pointer-events: none;" id="weatherwidget-io" class="weatherwidget-io" href="" target="iframe_a" data-textcolor="#ffffff"  data-label_1="..." data-label_2="..." data-font="Roboto" data-icons="Climacons Animated" data-mode="Current" data-theme="pure" data-basecolor="" data-suncolor="#ff7200" >Weather</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+  <iframe onload='' hidden src="about:blank" name="iframe_a" id="weather"></iframe>
+  <script>
+    document.getElementById("weatherwidget-io").href = localStorage.weatherURL
+    var url = "https://api.allorigins.win/raw?url=" + localStorage.weatherURL;
+    assignName()
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+
+    xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4) {
+          console.log(xhr.status);
+          console.log(xhr.responseText);
+         document.getElementById("weather").srcdoc = xhr.responseText
+         
+        
+   
+       }};
+
+    xhr.send();
+
+    function askForNewLoc() {
+      window.open("./weatherSettings.html")
+    }
+    function assignName(){
+      var wwio = document.getElementById("weatherwidget-io")
+      wwio.dataset.label_1 = localStorage.locationName1
+      wwio.dataset.label_2 = localStorage.locationName2
+    }
+  </script>
+</body>

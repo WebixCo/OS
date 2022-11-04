@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OnyxOS has crashed!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>body{
+            background-color: blue;
+            font-family: Courier, monospace;
+        }
+        hr{
+            border-top: 3px dashed black;
+            height:2px;
+            background:none;
+            border-bottom: 3px dashed black;
+            
+        }
+        button{
+            font-weight: normal;
+            font-size: large;
+            background:none;
+            border:none;
+            outline: none;
+            outline: 0px solid transparent;
+            font-family: Courier, monospace;
+        }
+        *:focus{
+            background-color: grey;
+            outline: none;
+
+        }
+        *{
+            outline:none !important;
+        }
+        *,*:focus,*:hover{
+            outline:none;
+        }
+</style>
+    </head>
+    <body>
+    <h1>FATAL STOP</h1>
+    <p>STOPCODE: ERR_NO_NET</p>
+    <hr>
+    <p>You can try to boot OnyxOS, however, mileage may vary with apps.</p>
+    <p>Tap to select</p>
+    <center><b>
+        <P>1. <button onclick="window.location.href = './desktop.html'">[ATTEMPT BOOT]</button><br>2. <button onclick="shutdown()">[SHUTDOWN]</button></P></b>
+      <h1 id="extAd">The only way to use OnyxOS offline is to download our extention via Flame</h1>
+    </center>
+    <script>
+      if(window.location.href = "chrome-extention:"){document.getElementById("extAd").hidden = true}
+        document.addEventListener('keypress', logKey);
+        function logKey(e) {
+            console.log(e.code);
+            if(e.code === "Digit1"){
+                console.log("KeyPress1")
+                document.getElementsByTagName("button")[0].focus()
+            }
+            if(e.code === "Digit2"){
+                console.log("KeyPress2")
+                document.getElementsByTagName("button")[1].focus()
+            }
+        }
+        function shutdown(){
+            document.write("<center><h1>It is now safe to shut down your computer...")
+            document.body.style.background = "black";
+            document.body.style.color = "white";
+        }
+    </script>
+    </body>
+</html>

@@ -1,0 +1,162 @@
+
+
+@font-face {
+    font-family: SegoeIcons;
+    src: url('https://onyxos.samdevsapps.repl.co/Segoe%20Fluent%20Icons.ttf');
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: #243fff;
+  background: -moz-linear-gradient(-45deg,  #243fff 1%, #ff9022 100%);
+  background: -webkit-linear-gradient(-45deg,  #243fff 1%,#ff9022 100%);
+  background: linear-gradient(135deg,  #243fff 1%,#ff9022 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243fff', endColorstr='#ff9022',GradientType=1 );
+  margin:0px;
+  padding:0px;
+  font-family: 'Roboto', sans-serif;
+  color:white;
+  user-select:none;
+  overflow: hidden;
+  
+}
+.startWdgt{
+  width:50%
+  height:30% !important; 
+  border-radius:25px;
+  margin:0px;
+  padding:0px;
+  bottom:10px;
+  left:10px;
+  
+}
+
+.deskWdgt{
+  width:calc(50vw + 100px) !important;
+  border-radius:25px;
+}
+.start{
+  background-color: #00000070;
+  border-radius: 10px;
+  width:25%;
+  min-width:500px;
+  bottom: 45px;
+  position: absolute;
+  left:10px;
+  padding-left:20px;
+  height:35%;
+  min-height:600px;
+  
+}
+
+.tbar{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 35px;
+  font-size:large;
+  align-self:center;
+  background: black;
+  margin:0px;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #00000070;
+  z-index:999999999;
+  text-align:left;
+
+}
+.tcontent{
+
+  width: calc(100% - 25px);
+  left:1%;
+  bottom:1px;
+  position: fixed;
+
+
+}
+#replit-badge, .replit-badge{
+  right: 5px !important;
+  width: 25px;
+  bottom:1px;
+  position:fixed;
+}
+#taskbar_time{
+  bottom:1px;
+  right: 40px !important;
+  position:fixed;
+}
+
+path:nth-of-type(1){
+  opacity: 0;
+}
+rect:nth-of-type(1),a{
+  max-width: 30px !important;
+}
+
+.icn{
+  font-family: "SegoeIcons";
+}
+
+.desktop{
+  width:100vw;
+  height:100%;
+  text-align:center;
+}
+.deskHead{
+  display: inline-block;
+  line-height: 10px !important;
+  
+}
+.wb-header{
+  background: #00000090;
+
+}
+.winbox{
+  background: none;
+  backdrop-filter: blur(5px);
+}
+
+.wb-body{
+  background: #00000090;
+  
+}
+.min > .wb-header {
+  
+  height: 35px !important;
+  background:none !important;
+  
+  position:absolute;
+}
+.min{
+  margin-left:1.7vw !important;
+  z-index:99999999999 !important;
+}
+
+.desktop-icon:hover, .desktop-icon:focus {
+  border-style: solid;
+  border-color: darkblue;
+  border-width:2px;
+  box-sizing: border-box;
+  
+}
+.desktop-icon{
+  width: 125px;
+  height:125px;
+  box-sizing: border-box;
+  vertical-align: middle;
+   display:table-cell;
+  margin:5px;
+}
+.desktop-icon>a>img{
+  height:40px !important;
+  
+}
+.icons{
+  align-content:center;
+  width:100vw;
+  text-align:center;
+  display:inline-block;
+  justify-content:center;
+  display: flex;
+  justify-content: center;
+}

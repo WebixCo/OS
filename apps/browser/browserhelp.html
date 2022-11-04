@@ -1,0 +1,65 @@
+<html>
+
+<body>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <style>
+    *{
+      font-family: 'Roboto', sans-serif !important;
+    }
+  </style>
+  <style>
+    body {
+      color: white;
+      background: none;
+    }
+
+    table {
+      border-spacing: 15px !important;
+    }
+
+    td {
+      background: #00000070;
+      border-radius: 10px;
+      width: 10vw;
+      height: 5vh;
+      gap: 10px;
+      padding: 15px;
+      
+
+    }
+
+    .bigchar {
+      background: -webkit-linear-gradient(#243FFF, #FF9022);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: large;
+    }
+  </style>
+  <center><br><br>
+    <h1>Flame Help</h1>
+    <input list="hlpFile" onchange="gethlpfile()" id="help" name="Help">
+    <datalist id="hlpFile">
+      <option content="How can I get the tab's URL?" data-value="tabURL.html">How can I get the tab's URL?</option>
+      <option content="How do I Share the tab's URL?" data-value="shareTab.html">How do I Share the tab's URL?</option>
+      <option content="How do I go back / go forward" data-value="tabNav.html">How do I go back / go forward</option>
+      <option content="How do I reload/refresh the tab?" data-value="tabNav.html">How do I reload/refresh the tab?
+      </option>
+      <option content="Why can't the browser get the url?" data-value="urlError.html">Why can't the browser get the url?
+      </option>
+      <option content="How do I change bookmarks?" data-value="editBookmarks.html">How do I change bookmarks?</option>
+      <option content="Why do some sites not work?" data-value="siteBroken.html">Why do some sites not work?</option>
+    </datalist>
+  </center>
+  <script>
+    function gethlpfile() {
+      var txtbox = document.getElementById("help")
+      var datalist = document.getElementById("hlpfile")
+      console.log(document.querySelector('[content="' + document.getElementById("help").value + '"]').dataset.value)
+      window.location.href = "./helpfiles/" + document.querySelector('[content="' + document.getElementById("help").value + '"]').dataset.value
+    }
+  </script>
+</body>
+
+</html>

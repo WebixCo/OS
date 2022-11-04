@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+<link rel="manifest" href="manifest.webmanifest">
+  <script src="winbox.bundle.min.js"></script>
+  <title>OnyxOS</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="desktop">
+    <p class="deskHead">
+    <h1>Welcome!</h1>
+      <h3 id="login"></h3>
+    <h2 id="timeDesk">loading...
+    </h2>
+    </p>
+    <div class="icons"><div class="desktop-icon"><br><a onclick="openWeb()"><img src="https://onyxos.samdevsapps.repl.co/apps/browser/flame.png" height="40px"><br>Flame Browser</a></div>
+      <div class="desktop-icon"><br><a onclick="openGobosWorld()"><img src="img/gobo.png" height="40px"><br>Gobo's World (game)</a></div>
+      <div class="desktop-icon"><br><a onclick="openMC()"><img src="img/mcclasic.png" height="40px"><br>Minecraft Classic</a></div>  
+      <div class="desktop-icon"><br><a onclick="openShl()"><img src="img/shl.ico" height="40px"><br>Shell Shockers</a></div>
+      <div class="desktop-icon"><br><a onclick="openPnt()"><img src="https://onyxos.samdevsapps.repl.co/apps/paintz/images/logo/favicon.ico" height="40px"><br>PaintZ</a></div>
+      <div style="display:none !important;" class="desktop-icon"><br><a onclick="opencookie()" ><img src="https://onyx-os-cookie-clicker.samdevsapps.repl.co/img/favicon.ico" height="40px"><br>Cookie Clicker</a></div>
+      <div class="desktop-icon"><br><a onclick="openDino()"><img src="https://onyxos.samdevsapps.repl.co/apps/Dino/icon.png" height="40px"><br>Dino Game</a></div>
+      
+  </div>
+      <iframe style="" class="deskWdgt" src="https://onyxos.samdevsapps.repl.co/ww.html" scrolling="no" frameborder=0 target="_self"></iframe>
+  </div>
+<div hidden="true" class="start" id="startmenu">
+  <h5>Start</h5>
+  
+</div>
+  
+  <div class="tbar">
+    <div class="tcontent">
+      <a onclick='document.getElementById("startmenu").hidden == true ? document.getElementById("startmenu").hidden = false : document.getElementById("startmenu").hidden = true' id="start" class="icn">
+        <!-- Nav Arrow Icon -->
+      </a>
+      <div id="taskbar_time">loading...</div>
+      <a id="replit-badge" class="replit-badge" href="https://replit.com/@SamDevsapps/ONYXOS?v=1"
+        title="Made and hosted on Repl.it"><img class="replit-badge" src="img/REPL Logo.png"></a>
+    </div>
+  </div>
+
+
+
+  <script src="script.js"></script><script src="fs.js"></script>
+</body>
+
+</html>

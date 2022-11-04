@@ -1,0 +1,23 @@
+<h1 id="how-to-get-weather-in-onyxos">How to get weather in OnyxOS</h1>
+<h3 id="do-not-just-type-the-name-of-where-you-live">DO NOT JUST TYPE THE NAME OF WHERE YOU LIVE!</h3>
+<ol>
+<li>Go here: <a href="https://cse.google.com/cse?cx=83bce3091e1144d37" target="_blank">Onyx Weather Search</a></li>
+<li>Search for where you live</li>
+<li>select the first NON AD link</li>
+<li>copy the URL</li>
+<li>Paste below:</li>
+<input placeholder="URL" id="URL">
+  <input placeholder="The city EG: Brisbane" id="1">
+  <input placeholder="The state + country EG: QLD, Australia" id="2">
+<button onclick="saveweather()">Save</button>
+</ol>
+
+<script>
+    function saveweather() {
+    localStorage.setItem("weatherURL", document.getElementById("URL").value)
+      localStorage.setItem("locationName1", document.getElementById("1").value)
+      localStorage.setItem("locationName2", document.getElementById("2").value)
+    alert("You may now close the window and go back to OnyxOS")
+    console.log(localStorage.getItem("weatherURL"))
+    }
+    </script>
