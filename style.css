@@ -82,7 +82,7 @@ html, body {
 }
 #taskbar_time{
   bottom:1px;
-  right: 40px !important;
+  right: 10px !important;
   position:fixed;
 }
 
