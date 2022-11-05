@@ -36,3 +36,10 @@ function load(path) {
   console.log(path)
   return jsonPathToValue(JSON.parse(localStorage.fs), path);
 }
+
+listFiles = function(dir){
+  storage = {"d_home":{"d_Documents":{"f_README․html":"data:text/html;base64,PGgxIGlkPSJ3ZWxjb21lLXRvLW9ueXhvcyI+V2VsY29tZSB0byBPbnl4T1M8L2gxPg0KPHA+VGhpcyBpcyBhIHRlc3Qgb2YgdGhlIEZTPC9wPg0KDQo="},"d_Downloads":{},"d_Pics":{}}}
+  for (const key in storage) {
+    console.log(key)
+  }
+}

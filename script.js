@@ -61,6 +61,12 @@ function openDino() {
   });
 }
 
+function openFileMgr(){
+  new WinBox("Files", {
+    html: "<iframe style='height:100%; width:100%;' onmessage='alert(this)' src='./files.html'></iframe>"
+  });
+}
+
 function runFile(content, first, title){
   console.log(content)
   new WinBox(title, {
