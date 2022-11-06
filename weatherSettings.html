@@ -6,18 +6,31 @@
 <li>select the first NON AD link</li>
 <li>copy the URL</li>
 <li>Paste below:</li>
-<input placeholder="URL" id="URL">
-  <input placeholder="The city EG: Brisbane" id="1">
-  <input placeholder="The state + country EG: QLD, Australia" id="2">
-<button onclick="saveweather()">Save</button>
-</ol>
 
+
+</ol>
+<fieldset style="width:25vw"><center>
+  <legend>Weather Data</legend>
+  <input style="width:100%;margin-bottom:10px;" placeholder="URL" id="URL"><br>
+  <input style="width:100%;margin-bottom:10px;" placeholder="The city EG: Brisbane" id="1"><br>
+  <input style="width:100%;margin-bottom:10px;" placeholder="The state + country EG: QLD, Australia" id="2"><br>
+  <select style="width:100%;margin-bottom:10px;" id="format">
+    <option value="?unit=us">Farenheight (F&deg;)</option>
+    <option value="" selected>Celcius (C&deg;)</option>
+  </select><br>
+<button style="width:100%" onclick="saveweather()">💾 Save</button>
+</center>
+</fieldset>
 <script>
     function saveweather() {
-    localStorage.setItem("weatherURL", document.getElementById("URL").value)
+      NewURL = new URL(document.getElementById("URL").value)
+      NewURL.search = document.getElementById("format").value
+      console.log(NewURL.href)
+    localStorage.setItem("weatherURL", NewURL.href)
       localStorage.setItem("locationName1", document.getElementById("1").value)
       localStorage.setItem("locationName2", document.getElementById("2").value)
     alert("You may now close the window and go back to OnyxOS")
     console.log(localStorage.getItem("weatherURL"))
+    
     }
     </script>
