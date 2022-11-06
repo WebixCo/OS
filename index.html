@@ -1,6 +1,7 @@
 <body>
     <script>
-        alert(window.location.pathname)
+        href= window.location.href
+        alert(href.substring(0, href.lastIndexOf('/')) + "/")
         window.location.href = 'https://onyxauth.samdevsapps.repl.co/OS.html?'+window.location.protocol + "//" + window.location.host + window.location.pathname;
     </script>
 </body>
