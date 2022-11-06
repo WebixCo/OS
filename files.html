@@ -64,13 +64,13 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]--><Center>
-        <buttons><button>⇈</button>   <button onclick="load()">↳</button></buttons></Center><hr style="color:white; width:100vw">
+        <buttons><button onclick="up()">⇈</button>   <button onclick="load()">↳</button></buttons></Center><hr style="color:white; width:100vw">
         <div class="ulContainer"><ul id="ul">
         </ul></div>
         <a target="_blank" id="secretlink">Link</a>
         <script>
             function load(){
-                jsondata = JSON.parse(prompt("Load in some JSON data..."));
+                jsondata = JSON.parse(window.localStorage.fs)
                 prevData = jsondata
                 var ul = document.getElementById("ul");
                 for (const key in jsondata) {
@@ -80,30 +80,51 @@
                     li.onclick = function(){nav(key)}
                     ul.appendChild(li)
                 }
-                
+                prevPath = []
             }
             function nav(key){
                 linky = document.getElementById("secretlink")
                 var ul = document.getElementById("ul");
                 
-                
+                prevData = jsondata
                 jsondata = jsondata[key]
                 console.log(jsondata)
                 if(key.startsWith("d_")){
                     ul.innerHTML= ""
                     for (const key in jsondata) {
+                        if(key != ".."){
                         console.log(key)
                         var li = document.createElement("li");
                         li.innerText = key
                         li.onclick = function(){nav(key)}
                         ul.appendChild(li)
+
+                        jsondata[".."] =  prevData
+                    }
                 }
                 } else{
-                    console.log(jsondata)
 
-                    window.postMessage({data: jsondata,title: key})
+                    window.top.postMessage({data: jsondata,title: key})
                 }
                 
+            }
+            function up(){
+                if(jsondata['..'] != undefined){
+                    jsondata = jsondata['..']
+                }
+                ul.innerHTML= ""
+                    for (const key in jsondata) {
+                    if (key ==".."){
+
+                }
+                else{
+                    console.log(key)
+                        var li = document.createElement("li");
+                        li.innerText = key
+                        li.onclick = function(){nav(key)}
+                        ul.appendChild(li)
+                }
+            }
             }
         </script>
     </body>

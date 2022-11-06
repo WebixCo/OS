@@ -1,3 +1,8 @@
+window.onmessage = function(e) {
+  console.log("Recieved: " + e.data)
+  runFile(e.data.data, e.data.title);
+};
+
 function refreshTime() {
   const timeDisplay = document.getElementById("taskbar_time");
   const dateString = new Date().toLocaleString();
@@ -63,11 +68,11 @@ function openDino() {
 
 function openFileMgr(){
   new WinBox("Files", {
-    html: "<iframe style='height:100%; width:100%;' onmessage='alert(this)' src='./files.html'></iframe>"
+    html: "<iframe style='height:100%; width:100%;' onmessage='alert()' src='./files.html'></iframe>"
   });
 }
 
-function runFile(content, first, title){
+function runFile(content, title){
   console.log(content)
   new WinBox(title, {
     url: content
@@ -101,3 +106,6 @@ const queryString = window.location.href;
 const parameters = new URLSearchParams(queryString);
 const value = parameters.get('name');
 loginH3.textContent = ""+value
+
+
+
