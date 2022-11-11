@@ -4,129 +4,165 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Onyx Files</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <style>
-            body{
-                padding:10px;
-                margin:0px;
-                overflow: hidden;
-            }
-            .ulContainer{
-                max-height: calc(100vh - 110px);
-                overflow:auto;
-                margin-bottom: 30px;
-                width: calc(100vw-20px);
-                border-radius: 25px;
-                
-            }
-            ul{
-                padding-left: 10px;
-                
-            }
-            li{
-                width:calc(100% - 30px); 
-                list-style-type: none;
-                list-style: none;
-                padding:10px;
-                border-radius: 25px;
-                background-color: lightgray;
-                margin-bottom: 10px;
-                box-shadow: 3px 3px 3px lightgray;
-            }
-            li:hover{
-                background-color: grey;
-            }
-            button{
-                font-size: larger;
-                border-radius: 25px;
-                border: none;
-                padding:10px;
-                width:50px;
-                height:50px;
-                box-shadow: 3px 3px 3px lightgray;
-                margin:5px;
-            }
-            button:hover{
-                background-color: skyblue;
-                color:white;
-                font-weight: bold;
-                box-shadow:inset 3px 0px 10px grey;
-            }
-        </style>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Onyx Files</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        @font-face {
+            font-family: SegoeIcons;
+            src: url('Segoe%20Fluent%20Icons.ttf');
+        }
+
+        body {
+            padding: 10px;
+            margin: 0px;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        .ulContainer {
+            max-height: calc(100vh - 110px);
+            overflow: auto;
+            margin-bottom: 30px;
+            width: calc(100vw-20px);
+            border-radius: 25px;
+
+        }
+
+        ul {
+            padding-left: 10px;
+
+        }
+
+        li {
+            width: calc(100% - 30px);
+            list-style-type: none;
+            list-style: none;
+            padding: 10px;
+            border-radius: 25px;
+            background-color: lightgray;
+            margin-bottom: 10px;
+            box-shadow: 3px 3px 3px lightgray;
+        }
+
+        li:hover {
+            background-color: grey;
+        }
+
+        button {
+            font-size: larger;
+            border-radius: 25px;
+            border: none;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: #00000090;
+            box-shadow: 3px 3px 3px black;
+            color: white;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: 00000050;
+            color: white;
+            font-weight: bold;
+            box-shadow: 3px 0px 10px grey;
+        }
+
+        hr {
+            width: 100vw;
+            position: relative;
+            left: -10px;
+            background-color: white;
+            ;
+        }
+
+        .icon {
+            font-family: SegoeIcons;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]--><Center>
-        <buttons><button onclick="up()">⇈</button>   <button onclick="load()">↳</button></buttons></Center><hr style="color:white; width:100vw">
-        <div class="ulContainer"><ul id="ul">
-        </ul></div>
-        <a target="_blank" id="secretlink">Link</a>
-        <script>
-            function load(){
-                jsondata = JSON.parse(window.localStorage.fs)
-                prevData = jsondata
-                var ul = document.getElementById("ul");
-                for (const key in jsondata) {
-                    console.log(key)
-                    var li = document.createElement("li");
-                    li.innerText = key
-                    li.onclick = function(){nav(key)}
-                    ul.appendChild(li)
-                }
-                prevPath = []
+        <![endif]-->
+    <Center>
+        <buttons><button onclick="up()" class="icon"></button> <button onclick="load()" class="icon"></button>
+        </buttons>
+    </Center>
+    <hr style="color:white; width:100vw">
+    <div class="ulContainer">
+        <ul id="ul">
+        </ul>
+    </div>
+    <script>
+        function load() {
+            jsondata = JSON.parse(window.localStorage.fs)
+            prevData = jsondata
+            var ul = document.getElementById("ul");
+            ul.innerHTML = ""
+            for (const key in jsondata) {
+                console.log(key)
+                var li = document.createElement("li");
+                li.innerText = key
+                li.onclick = function () { nav(key) }
+                ul.appendChild(li)
             }
-            function nav(key){
-                linky = document.getElementById("secretlink")
-                var ul = document.getElementById("ul");
-                
-                prevData = jsondata
-                jsondata = jsondata[key]
-                console.log(jsondata)
-                if(key.startsWith("d_")){
-                    ul.innerHTML= ""
-                    for (const key in jsondata) {
-                        if(key != ".."){
+            prevPath = []
+        }
+        function nav(key) {
+            linky = document.getElementById("secretlink")
+            var ul = document.getElementById("ul");
+
+            prevData = jsondata
+            jsondata = jsondata[key]
+            console.log(jsondata)
+            if (key.startsWith("d_")) {
+                ul.innerHTML = ""
+                for (const key in jsondata) {
+                    if (key != "..") {
                         console.log(key)
                         var li = document.createElement("li");
                         li.innerText = key
-                        li.onclick = function(){nav(key)}
+                        li.onclick = function () { nav(key) }
                         ul.appendChild(li)
 
-                        jsondata[".."] =  prevData
+                        jsondata[".."] = prevData
                     }
                 }
-                } else{
+            } else {
 
-                    window.top.postMessage({data: jsondata,title: key})
-                }
-                
+                window.top.postMessage({ data: jsondata, title: key })
             }
-            function up(){
-                if(jsondata['..'] != undefined){
-                    jsondata = jsondata['..']
-                }
-                ul.innerHTML= ""
-                    for (const key in jsondata) {
-                    if (key ==".."){
+            console.log(prevPath)
+        }
+        function up() {
+            if (jsondata['..'] != undefined) {
+                jsondata = jsondata['..']
+            }
+            ul.innerHTML = ""
+            for (const key in jsondata) {
+                if (key == "..") {
 
                 }
-                else{
+                else {
                     console.log(key)
-                        var li = document.createElement("li");
-                        li.innerText = key
-                        li.onclick = function(){nav(key)}
-                        ul.appendChild(li)
+                    var li = document.createElement("li");
+                    li.innerText = key
+                    li.onclick = function () { nav(key) }
+                    ul.appendChild(li)
                 }
             }
-            }
-            load()
-        </script>
-    </body>
+        }
+        load()
+    </script>
+</body>
+
 </html>

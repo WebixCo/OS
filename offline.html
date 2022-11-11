@@ -10,9 +10,14 @@
         <title>OnyxOS has crashed!</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>body{
+        <style>
+        @font-face {
+  font-family:vgafix;
+  src: url("vgafix.ttf");
+}
+        body{
             background-color: blue;
-            font-family: Courier, monospace;
+            font-family: vgafix, Terminal, 'Fixedsys Regular', "Small Fonts Regular",monospace;
         }
         hr{
             border-top: 3px dashed black;
@@ -50,7 +55,7 @@
     <p>You can try to boot OnyxOS, however, mileage may vary with apps.</p>
     <p>Tap to select</p>
     <center><b>
-        <P>1. <button onclick="window.location.href = './desktop.html'">[ATTEMPT BOOT]</button><br>2. <button onclick="shutdown()">[SHUTDOWN]</button></P></b>
+        <P>1. <button onclick="window.location.reload()">[ATTEMPT BOOT]</button><br>2. <button onclick="shutdown()">[SHUTDOWN]</button></P></b>
       <h1 id="extAd">The only way to use OnyxOS offline is to download our extention via Flame</h1>
     </center>
     <script>
@@ -73,5 +78,6 @@
             document.body.style.color = "white";
         }
     </script>
+    <script src="script.js"></script>
     </body>
 </html>

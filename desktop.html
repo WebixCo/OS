@@ -17,6 +17,7 @@
 </head>
 
 <body>
+<div id="app">
   <div class="desktop">
     <p class="deskHead">
     <h1>Welcome!</h1>
@@ -37,19 +38,27 @@
       <iframe style="" class="deskWdgt" src="ww.html" scrolling="no" frameborder=0 target="_self"></iframe>
   </div>
 <div hidden="true" class="start" id="startmenu">
-  <h5>Start</h5>
-  
-</div>
+  <div class="start-header"><h4>Start</h4><span class="forceright-start"></span><button onclick="window.location.href='index.html'"><img src="refresh.png" width="27px"></button><button onclick="shutdown()"><img src="power.png" width="30px"></button></div>
+    <div class="start-icon"><br><button onclick="openWeb();document.getElementById('start').click()"><img src="apps/browser/flame.png" height="40px"><br>Flame</button></div>
+    <div class="start-icon"><br><button onclick="openGobosWorld();document.getElementById('start').click()"><img src="img/gobo.png" height="40px"><br>Gobo's World</button></div>
+    <div class="start-icon"><br><button onclick="openMC();document.getElementById('start').click()"><img src="img/mcclasic.png" height="40px"><br>Minecraft Classic</button></div>  
+    <div class="start-icon"><br><button onclick="openShl();document.getElementById('start').click()"><img src="img/shl.ico" height="40px"><br>Shell Shockers</button></div>
+    <div style="display:none !important;" class="start-icon"><br><button onclick="opencookie();document.getElementById('start').click()" ><img src="https://onyx-os-cookie-clicker.samdevsapps.repl.co/img/favicon.ico" height="40px"><br>Cookie Clicker</button></div>
+    <div class="start-icon"><br><button onclick="openDino();document.getElementById('start').click()"><img src="apps/Dino/icon.png" height="40px"><br>Dino </button></div>
+    <div class="start-icon"><br><button onclick="openFileMgr();document.getElementById('start').click()"><img src="files.png" height="40px"><br>Files</button></div>
+    <div class="start-icon"><br><button onclick="openPnt();document.getElementById('start').click()"><img src="apps/paintz/images/logo/favicon.ico" height="40px"><br>PaintZ</button></div>
+    <iframe src="https://onyxassistant.samdevsapps.repl.co/onyxnotes/widget.html" width="45%" height="45%" frameborder="0"> </iframe><iframe src="https://onyxassistant.samdevsapps.repl.co/onyxnotes/widget.html" width="45%" height="45%" frameborder="0"> </iframe>
+  </div>
   
   <div class="tbar">
     <div class="tcontent">
       <a onclick='document.getElementById("startmenu").hidden == true ? document.getElementById("startmenu").hidden = false : document.getElementById("startmenu").hidden = true' id="start" class="icn">
         <!-- Nav Arrow Icon -->
-      </a>
-      <div id="taskbar_time">loading...</div>
+      </a><button style="top:-3px;right:90px;position: absolute;background: none; border: 0px;color:white;font-size: larger;" class="icn" onclick="document.body.requestFullscreen()"></button>
+      <div id="taskbar_time" onclick="virus();">loading...</div>
     </div>
   </div>
-
+</div>
 
 
   <script src="script.js"></script><script src="fs.js"></script>

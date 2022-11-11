@@ -1,3 +1,4 @@
+<style>*{font-family: sans-serif;color:white;} button,input,select{background-color: #00000090;border: none;box-shadow: inset 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%); border-radius: 25px;}</style>
 <h1 id="how-to-get-weather-in-onyxos">How to get weather in OnyxOS</h1>
 <h3 id="do-not-just-type-the-name-of-where-you-live">DO NOT JUST TYPE THE NAME OF WHERE YOU LIVE!</h3>
 <ol>
@@ -29,7 +30,9 @@
     localStorage.setItem("weatherURL", NewURL.href)
       localStorage.setItem("locationName1", document.getElementById("1").value)
       localStorage.setItem("locationName2", document.getElementById("2").value)
-    alert("You may now close the window and go back to OnyxOS")
+      if(confirm("OnyxOS will now reboot, to reboot later, press cancel")){
+        window.top.location.href = "index.html"
+      }
     console.log(localStorage.getItem("weatherURL"))
     
     }

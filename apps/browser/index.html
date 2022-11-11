@@ -20,6 +20,11 @@
     }
   </style>
   <style>
+    *{
+      cursor:url(cursor.cur), auto!important;
+    }
+  </style>
+  <style>
     html,
     body {
       padding: 0px;
@@ -42,6 +47,11 @@
 </head>
 
 <body>
+  <style>
+    *{
+      cursor:url(cursor.cur), auto!important;
+    }
+  </style>
   <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -64,12 +74,28 @@
       
     
     function updatebox() {
-      try {
-        document.getElementById("url").value = document.getElementById('browser').contentWindow.location.href
+      url = document.getElementById('browser').contentWindow.location.href
+      if(url.includes(window.location.pathname.split("index.html")[0])) {
+        console.log("internal page")
+        if(url.includes("browsernewtab.html")){
+          document.getElementById('url').value = ""
+          document.getElementById('url').placeholder = "Search or type a URL"
+        }
+        if(url.includes("browserhelp.html")){
+          document.getElementById('url').value = "flame://help"
+        }
+        if(url.includes("helpfiles")){
+          
+        }
+      } else{
+        try {
+          document.getElementById("url").value = document.getElementById('browser').contentWindow.location.href
+        }
+        catch(err) {
+          document.getElementById("url").value = "URL Unaccessible"
+        }
       }
-      catch(err) {
-        document.getElementById("url").value = "Due to technical limitations, we can't access the URL"
-      }
+      
     }
 
   </script>

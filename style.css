@@ -1,17 +1,23 @@
-
+body{
+  --dark-gradient: linear-gradient(135deg,  #0016b6 1%,#ff9022 100%);
+  --light-gradient: linear-gradient(135deg,  #243fff 1%,#b55a04 100%);
+}
 
 @font-face {
     font-family: SegoeIcons;
-    src: url('https://onyxos.samdevsapps.repl.co/Segoe%20Fluent%20Icons.ttf');
+    src: url('Segoe%20Fluent%20Icons.ttf');
 }
 
-html, body {
+@font-face {
+  font-family:vgafix;
+  src: url("vgafix.ttf");
+}
+
+html, body, #app {
   height: 100%;
   width: 100%;
   background: #243fff;
-  background: -moz-linear-gradient(-45deg,  #243fff 1%, #ff9022 100%);
-  background: -webkit-linear-gradient(-45deg,  #243fff 1%,#ff9022 100%);
-  background: linear-gradient(135deg,  #243fff 1%,#ff9022 100%);
+  background: var(--light-gradient);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243fff', endColorstr='#ff9022',GradientType=1 );
   margin:0px;
   padding:0px;
@@ -33,7 +39,7 @@ html, body {
 }
 
 .deskWdgt{
-  width:calc(50vw + 100px) !important;
+  min-width:calc(50vw + 100px) !important;
   border-radius:25px;
 }
 .start{
@@ -47,6 +53,7 @@ html, body {
   padding-left:20px;
   height:35%;
   min-height:600px;
+  vertical-align: middle;
   
 }
 
@@ -61,7 +68,7 @@ html, body {
   margin:0px;
   border-radius: 10px 10px 0px 0px;
   background-color: #00000070;
-  z-index:999999999;
+  z-index:99999999999;
   text-align:left;
 
 }
@@ -124,12 +131,15 @@ rect:nth-of-type(1),a{
   
   height: 35px !important;
   background:none !important;
-  
   position:absolute;
 }
 .min{
-  margin-left:1.7vw !important;
+  margin-left:2.5vw !important;
   z-index:99999999999 !important;
+  box-shadow: none;
+  width: fit-content;
+  top:unset !important;
+  bottom: 0px !important;
 }
 
 .desktop-icon:hover, .desktop-icon:focus {
@@ -159,4 +169,46 @@ rect:nth-of-type(1),a{
   justify-content:center;
   display: flex;
   justify-content: center;
+}
+
+
+.start-icon{
+  width: fit-content;
+  height:fit-content;
+  box-sizing: border-box;
+  vertical-align: top;
+  display:table-cell;
+  padding: none !important;
+  width:65px !important;
+  color:white;
+}
+.start-icon>button>img{
+  padding: none !important;
+  height:40px !important;
+  color:white;
+}
+.start-icon>button{
+  background:none;
+  border:none;
+  width:65px !important;
+  color:white;
+}
+
+.start-header{
+  display: inline;
+  display: flex;
+}
+.start-header > button{
+  background:none;
+  border:0px;
+}
+.forceright-start{
+  left: calc(100%)
+}
+
+.start > iframe{
+  position: relative;
+  left:-5px;
+  border-radius: 10px;
+  margin:10px;
 }

@@ -41,7 +41,11 @@
   </style><button
     style="top:0vh;left:0%;position: absolute; padding:0px;height:23px;font-size:x-large;background:none;color:white;width:3%;border:0px;"
     id="gobtn" onclick="window.location.href='browserhelp.html'">?</button>
-  <center>
+  <center><style>
+    *{
+      cursor:url(cursor.cur), auto!important;
+    }
+  </style>
     <h1>Welcome<h2 id="timeDesk">loading...
       </h2>
     </h1>
@@ -71,13 +75,24 @@
       </tbody>
     </table>
     <div hidden="true" class="td-false"><H5>Download The Chrome Extention!</H5><p>The OnyxOS extention fixes many problems, such as the browser not working</p><button onclick="window.location.href = 'OnyxOS%20Extention%20Install%20GUIDE.html'">Download</button></div>
-    <script>function refreshTimeDesk() {
+    <script>
+    box = window.parent.document.getElementById('url')
+    box.placeholder = 'Search or type a URL'
+    function refreshTimeDesk() {
         const timeDisplay = document.getElementById("timeDesk");
         const dateString = new Date().toLocaleString();
         const formattedString = dateString.replace(", ", " - ");
         timeDisplay.textContent = "It's " + formattedString.split(" - ")[1];
       }
-      setInterval(refreshTimeDesk, 1000);</script>
+      setInterval(box.value = '', 1000);
+      setInterval(refreshTimeDesk, 1000);
+      function loadurl(url){
+        
+      }
+      </script>
+      
+
+      
   </center>
 </body>
 

@@ -1,0 +1,29 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "apps": {
+      "name": "apps",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "img": {
+      "name": "img",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "testing": {
+      "name": "testing",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    }
+  },
+  "files": {
+    "Snippets": 0,
+    "Todos + Snippets": 1,
+    "! Todo": 2
+  }
+}
