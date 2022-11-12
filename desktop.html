@@ -46,44 +46,57 @@
       </div>
       <iframe style="" class="deskWdgt" src="ww.html" scrolling="no" frameborder=0 target="_self"></iframe>
     </div>
-    <div hidden onclick='document.getElementById("start").click()'id="startmenu" class="startdrop">
+    <div hidden onclick='document.getElementById("start").click()' id="startmenu" class="startdrop">
       <div style="outline: none;" tabindex="-1" class="start">
         <div class="start-header">
           <h4>Start</h4><span class="forceright-start" style="width:100%"></span><button
             onclick="window.location.href='index.html'"><img src="refresh.png" width="27px"></button><button
             onclick="shutdown()"><img src="power.png" width="30px"></button>
         </div>
-        <div class="start-icon"><br><button onclick="openWeb();document.getElementById('start').click()"><img
-              src="apps/browser/flame.png" height="40px"><br>Flame</button></div>
-        <div class="start-icon"><br><button onclick="openGobosWorld();document.getElementById('start').click()"><img
-              src="img/gobo.png" height="40px"><br>Gobo's World</button></div>
-        <div class="start-icon"><br><button onclick="openMC();document.getElementById('start').click()"><img
-              src="img/mcclasic.png" height="40px"><br>Minecraft Classic</button></div>
-        <div class="start-icon"><br><button onclick="openShl();document.getElementById('start').click()"><img
-              src="img/shl.ico" height="40px"><br>Shell Shockers</button></div>
-        <div style="display:none !important;" class="start-icon"><br><button
-            onclick="opencookie();document.getElementById('start').click()"><img
-              src="https://onyx-os-cookie-clicker.samdevsapps.repl.co/img/favicon.ico" height="40px"><br>Cookie
-            Clicker</button></div>
-        <div class="start-icon"><br><button onclick="openDino();document.getElementById('start').click()"><img
-              src="apps/Dino/icon.png" height="40px"><br>Dino </button></div>
-        <div class="start-icon"><br><button onclick="openFileMgr();document.getElementById('start').click()"><img
-              src="files.png" height="40px"><br>Files</button></div>
-        <div class="start-icon"><br><button onclick="openPnt();document.getElementById('start').click()"><img
-              src="apps/paintz/images/logo/favicon.ico" height="40px"><br>PaintZ</button></div>
+        <center>
+          <div class="start-icon"><br><button onclick="openWeb();document.getElementById('start').click()"><img
+                src="apps/browser/flame.png" height="40px"><br>Flame</button></div>
+          <div class="start-icon"><br><button onclick="openGobosWorld();document.getElementById('start').click()"><img
+                src="img/gobo.png" height="40px"><br>Gobo's World</button></div>
+          <div class="start-icon"><br><button onclick="openMC();document.getElementById('start').click()"><img
+                src="img/mcclasic.png" height="40px"><br>Minecraft Classic</button></div>
+          <div class="start-icon"><br><button onclick="openShl();document.getElementById('start').click()"><img
+                src="img/shl.ico" height="40px"><br>Shell Shockers</button></div>
+          <div style="display:none !important;" class="start-icon"><br><button
+              onclick="opencookie();document.getElementById('start').click()"><img
+                src="https://onyx-os-cookie-clicker.samdevsapps.repl.co/img/favicon.ico" height="40px"><br>Cookie
+              Clicker</button></div>
+          <div class="start-icon"><br><button onclick="openDino();document.getElementById('start').click()"><img
+                src="apps/Dino/icon.png" height="40px"><br>Dino </button></div>
+          <div class="start-icon"><br><button onclick="openFileMgr();document.getElementById('start').click()"><img
+                src="files.png" height="40px"><br>Files</button></div>
+          <div class="start-icon"><br><button onclick="openPnt();document.getElementById('start').click()"><img
+                src="apps/paintz/images/logo/favicon.ico" height="40px"><br>PaintZ</button></div><br>
+          <div class="start-icon"><br><button onclick="openweatherapp();document.getElementById('start').click()"><img
+                src="WEATHERICON.png" height="40px"><br>Weather</button></div><div class="start-icon"><br><button onclick="openNotes();document.getElementById('start').click()"><img
+                  src="notes.png" height="40px"><br>Notes</button></div><div class="start-icon"><br><button onclick="openAssistant();document.getElementById('start').click()"><img
+                    src="assistant.png" height="40px"><br>Assistant</button></div>
+                  
+          
+        </center>
         <iframe src="https://onyxassistant.samdevsapps.repl.co/onyxnotes/widget.html" width="45%" height="45%"
-          frameborder="0"> </iframe><iframe src="weatherStart.html"
-          width="45%" height="45%" frameborder="0"> </iframe>
+          frameborder="0"> </iframe><iframe src="weatherStart.html" width="45%" height="45%" frameborder="0"> </iframe>
       </div>
     </div>
-    <div style="background-image: url('assistant popup.png');width: 282px;height:156px;position:absolute;z-index: 9999999; left:10px; bottom: 30px;background-size: contain;"><iframe frameborder=0 height="64%" width="94%" src="https://onyxassistant.samdevsapps.repl.co/os.html" style="margin:10px;"></iframe></div>
+    <div id="assistantpopup" hidden
+      style="background-image: url('assistant popup.png');width: 282px;height:156px;position:absolute;z-index: 9999999; left:15px; bottom: 30px;background-size: contain;">
+      <iframe frameborder=0 height="64%" width="94%" allow="microphone *;camera"
+        src="https://onyxassistant.samdevsapps.repl.co/os.html" style="margin:10px;"></iframe>
+    </div>
     <div class="tbar">
       <div class="tcontent">
         <a onclick='document.getElementById("startmenu").hidden == true ? document.getElementById("startmenu").hidden = false : document.getElementById("startmenu").hidden = true;document.getElementById("startmenu").focus();'
           id="start" class="icn">
           <!-- Nav Arrow Icon -->
         </a>
-        <img width="30px" onclick="openAssistant()" style="top:-4px; position:absolute" alt="" class="icn" src="assistant.png">
+        <img width="30px"
+          onclick='document.getElementById("assistantpopup").hidden == true ? document.getElementById("assistantpopup").hidden = false : document.getElementById("assistantpopup").hidden = true;'
+          style="top:-4px; position:absolute" alt="" class="icn" src="assistant.png">
         <div style="bottom:1px;right: 10px !important;position:absolute;"><button id="fullscreenBTN" type="button"
             class="icn" onclick="document.body.requestFullscreen()"></button>
           <div id="taskbar_time" onclick="virus();">loading...</div>

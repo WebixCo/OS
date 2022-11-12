@@ -105,7 +105,7 @@ function openNotes(){
 
 function openAssistant(){
   new WinBox("OnyxAssistant", {
-    url: "https://onyxassistant.samdevsapps.repl.co",
+    url: "https://onyxassistant.samdevsapps.repl.co/onyx_app.html",
     bottom: 40,
   });
 }
