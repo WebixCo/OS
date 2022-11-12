@@ -88,9 +88,17 @@ html, body, #app {
   position:fixed;
 }
 #taskbar_time{
-  bottom:1px;
-  right: 10px !important;
-  position:fixed;
+
+}
+
+#fullscreenBTN{
+  top:26px;
+  right:35px;
+  position: relative;
+  background: none;
+  border: 0px;
+  color:white;
+  font-size: larger;
 }
 
 path:nth-of-type(1){
@@ -206,9 +214,17 @@ rect:nth-of-type(1),a{
   left: calc(100%)
 }
 
-.start > iframe{
+.start >iframe{
   position: relative;
   left:-5px;
   border-radius: 10px;
   margin:10px;
+}
+
+.startdrop{
+  position: absolute;
+  top: 0px;
+  height: 100vh !important;
+  width: 100vw  !important;
+  z-index: 99999999999999999999;
 }

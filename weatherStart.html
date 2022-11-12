@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <style>
+        @font-face {
+            font-family: SegoeIcons;
+            src: url('Segoe%20Fluent%20Icons.ttf');
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        h2:nth-of-type(1) {
+            top: -10px;
+            left: 20px;
+            position: absolute;
+        }
+
+        iframe:nth-last-of-type(1),
+        a:nth-last-of-type(1) {
+            width: 75vw !important;
+            height: 70vh !important;
+
+            top: 60px !important;
+            left: 10vw !important;
+            position: fixed !important;
+            font-size: xx-large !important;
+
+        }
+
+        * {
+            font-size: xx-large !important;
+        }
+
+        img {
+            width: 100vw;
+            height: 99vh;
+        }
+
+        .icn {
+            font-family: "SegoeIcons";
+            color:white;
+            background: #4472c4;
+            border: solid 3px #2f528f;
+            border-radius: 25px;
+            padding:5px;
+            z-index: 99999;
+            position: absolute;
+            right: 3px;
+            top: 3px;
+            font-size: x-large !important;
+        }
+    </style>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]--><button class="icn" onclick="window.top.openweatherapp()"></button>
+    <img src="weather.png">
+    <h2>Weather</h2>
+    <a style="pointer-events: none;" id="weatherwidget-io" class="weatherwidget-io" href="" target="iframe_a"
+        data-textcolor="#000000" data-label_1="..." data-label_2="..." data-font="Roboto" data-icons="Climacons"
+        data-theme="pure" data-basecolor="" data-suncolor="#ff7200">Weather</a>
+    <script>
+        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+    </script>
+    <iframe onload='' hidden src="about:blank" name="iframe_a" id="weather"></iframe>
+    <script>
+        window.open = function (url) {
+            window.top.postMessage({ data: url, title: "Weather Settings" })
+        }
+
+        function open(url) {
+            window.top.postMessage({ data: url, title: "Weather Settings" })
+        }
+        document.getElementById("weatherwidget-io").href = localStorage.weatherURL
+        var url = "https://api.allorigins.win/raw?url=" + localStorage.weatherURL;
+        assignName()
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                console.log(xhr.status);
+                console.log(xhr.responseText);
+                document.getElementById("weather").srcdoc = xhr.responseText
+
+
+
+            }
+        };
+
+        xhr.send();
+
+        function askForNewLoc() {
+            window.open("./weatherSettings.html")
+        }
+        function assignName() {
+            var wwio = document.getElementById("weatherwidget-io")
+            wwio.dataset.label_1 = localStorage.locationName1
+            wwio.dataset.label_2 = localStorage.locationName2
+        }
+    </script>
+    <script src="" async defer></script>
+</body>
+
+</html>

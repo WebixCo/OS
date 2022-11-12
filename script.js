@@ -1,8 +1,11 @@
 window.onmessage = function(e) {
-  
+  console.log("Recieved: " + e.data)
   if(e.data.data !== undefined){
     runFile(e.data.data, e.data.title);
     console.log("Recieved: " + e.data)
+  }
+  if(e.data == "openNotes"){
+    openNotes()
   }
   
 };
@@ -80,6 +83,29 @@ function openDino() {
 function openFileMgr(){
   new WinBox("Files", {
     html: "<iframe style='height:100%; width:100%;' onmessage='alert()' src='./files.html'></iframe>",
+    bottom: 40,
+  });
+}
+
+function openweatherapp(){
+  new WinBox("Weather", {
+    url: "weatherApp.html",
+    bottom: 40,
+    width: 204,
+    height:600
+  });
+}
+
+function openNotes(){
+  new WinBox("Notes (via OnyxAssistant)", {
+    url: "https://onyxassistant.samdevsapps.repl.co/onyxnotes/os.html",
+    bottom: 40,
+  });
+}
+
+function openAssistant(){
+  new WinBox("OnyxAssistant", {
+    url: "https://onyxassistant.samdevsapps.repl.co",
     bottom: 40,
   });
 }
