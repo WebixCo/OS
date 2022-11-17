@@ -10,6 +10,23 @@ window.onmessage = function(e) {
   
 };
 
+
+
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+
+
+
+function updateRow() {
+  
+}
+
 function refreshTime() {
   const timeDisplay = document.getElementById("taskbar_time");
   const dateString = new Date().toLocaleString();
@@ -64,12 +81,17 @@ function opencookie() {
   });
 }
 
-function openPnt() {
-  new WinBox("PaintZ", {
-    url: "apps/paintz/",
-    icon: "apps/paintz/images/logo/favicon.ico",
-    bottom: 40,
-  });
+function openPnt(fix) {
+  if(fix === "yea"){
+    var paintz = new WinBox("PaintZ", {
+      url: "https://paintz.app/",
+      icon: "apps/paintz/images/logo/favicon.ico",
+      bottom: 40,
+    });
+  } else{
+    confirmwb("OnyxOS's local PaintZ is currently broken, do you want to load the external PaintZ instead?<small>This means PaintZ won't be in the style of OnyxOS!</small>", 'openPnt("yea")', 'console.log("Paint Exited")')
+  }
+  
 }
 
 function openDino() {
@@ -145,15 +167,28 @@ const queryString = window.location.href;
 const parameters = new URLSearchParams(queryString);
 const value = parameters.get('name');
 loginH3.textContent = ""+value
+localStorage.db = parameters.get('db');
 
 window.open = function(url){
-  alert(url)
+  new WinBox("flamewebview", {
+    url: url,
+    bottom: 40,
+  });
 }
 
 function open(url){
- alert(url)
+  new WinBox("flamewebview", {
+    url: url,
+    bottom: 40,
+  });
 }
 
+function syncapp(){
+  new WinBox("Sync", {
+    url: "http://localhost/sync-app.html",
+    bottom: 40,
+  });
+}
 function shutdown(){
   document.write("<center><h1>It is now safe to shut down your computer...")
   document.body.style.background = "black";
@@ -176,7 +211,7 @@ var i = 0;
 
 
 function virus(){
-  for(var i = 0; i < 150;i++){
+  for(var i = 0; i < 100;i++){
     //new WinBox()
     try {
       console.log(i);
@@ -184,7 +219,7 @@ function virus(){
         {
           max: false,
           min: false,
-          
+          class: ["virus","no-close", "no-min","no-max", "no-resize", "no-move","no-full"],
           
         }
       );
@@ -193,4 +228,14 @@ function virus(){
       console.log(e);
    }
   }
+}
+
+function confirmwb(confirmation, onyes, onno){
+  var confstatus;
+  confbox = new WinBox("confirm", {
+    modal: true,
+    html: "<center><h3>" + confirmation + "<br><button id='btnOk'>OK</button><button id='btnCancel' >Cancel</button></h3></center>",
+  });
+  document.getElementById("btnOk").onclick= function(){eval(onyes);confbox.close();}
+  document.getElementById("btnCancel").onclick= function(){eval(onno);confbox.close();}
 }

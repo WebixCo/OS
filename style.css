@@ -228,3 +228,9 @@ rect:nth-of-type(1),a{
   width: 100vw  !important;
   z-index: 99999999999999999999;
 }
+
+.virus > .wb-header >*{display: none !important;}
+.virus>{z-index: 9999999999999999999999999999999999999999999999999999999999999999 !important;}
+
+
+
