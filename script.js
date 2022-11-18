@@ -185,7 +185,7 @@ function open(url){
 
 function syncapp(){
   new WinBox("Sync", {
-    url: "http://localhost/sync-app.html",
+    url: "sync-app.html",
     bottom: 40,
   });
 }
