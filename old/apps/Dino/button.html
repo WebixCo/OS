@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="button.js"></script>
+    <style>
+        h1 {
+            color: #333;
+            font-size: 1.6em;
+            font-weight: normal;
+            line-height: 1.25em;
+            margin-bottom: 16px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .pushy {
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+            background: #2115c7;
+            height: 50px;
+            font-size: 40px;
+            text-align: center;
+            color: white;
+            margin-top: 15px;
+            padding-top: 8px;
+            font-family: sans-serif;
+            font-weight: lighter;
+            border-color: darkgrey;
+            border-style: solid;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 80%;
+            user-select: none;
+        }
+
+        .pushy:hover {
+            transform: scale(1.2);
+        }
+
+        .pushy:active {
+            transform: scale(1.1);
+        }
+
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        
+                
+        .ohidden {
+            opacity: 0;
+        }
+
+        * {
+            scrollbar-width: none, -moz-scrollbars-none !important;
+            transition: 0.3s;
+            
+        }
+        .fadeout {
+            opacity: 0;
+            animation: fadein 0.5s reverse;
+        }
+
+    
+    </style>
+</head>
+
+<body id="t" class="offline" style='width:800px;' id="iframe">
+    <div id="bigbutt"
+        style="width: 100%; height: calc(100% - 20px); top:0;left: 0; position: fixed; z-index: 100;
+        box-shadow: 5px 5px 5px 0 white inset, -5px -5px 5px 0 white inset !important; padding-top: 20px;">
+
+            <div class="pushy center" id="button">START GAME</div>
+
+    </div>
+</body>
+
+</html>

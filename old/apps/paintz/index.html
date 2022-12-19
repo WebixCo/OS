@@ -1,0 +1,43 @@
+<body><style>.wb-header{
+    background: #00000090;
+  
+  }
+  .winbox{
+    background: none;
+    backdrop-filter: blur(5px);
+  }
+  
+  .wb-body{
+    background: #00000090;
+    
+  }
+  .min > .wb-header {
+    
+    height: 35px !important;
+    background:none !important;
+    position:absolute;
+  }
+  .min{
+    margin-left:5vw !important;
+    z-index:99999999999 !important;
+    box-shadow: none;
+    width: fit-content;
+    top:unset !important;
+    bottom: 0px !important;
+  }
+  </style>
+    <script src="../../winbox.bundle.min.js"></script>
+    <script>window.location.href = "http://paintz.app";
+        function confirmwb(confirmation, onyes, onno) {
+            var confstatus;
+            confbox = new WinBox("confirm", {
+                modal: true,
+                html: "<center><h1>" + confirmation + "<br><button id='btnOk'>OK</button><button id='btnCancel' >Cancel</button></h1></center>",
+            });
+            document.getElementById("btnOk").onclick = function () { eval(onyes); confbox.close(); }
+            document.getElementById("btnCancel").onclick = function () { eval(onno); confbox.close(); }
+        }
+        confirmwb("OnyxOS's PaintZ is currently broken, do you want to use the external PaintZ?", window.location.href = "http://paintz.app", window.location.href = "http://paintz.app";)
+        
+    </script>
+</body>

@@ -47,7 +47,7 @@ html, body, #app {
   border-radius: 10px;
   width:25%;
   min-width:500px;
-  bottom: 45px;
+  bottom: 60px;
   position: absolute;
   left:10px;
   padding-left:20px;
@@ -60,25 +60,25 @@ html, body, #app {
 .tbar{
   position: absolute;
   bottom: 0px;
-  width: 100%;
+  width: calc(100% - 20px);
   height: 35px;
   font-size:large;
   align-self:center;
   background: black;
   margin:0px;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 10px 10px 10px 10px;
   background-color: #00000070;
   z-index:99999999999;
   text-align:left;
+  margin:10px;
 
 }
 .tcontent{
 
-  width: calc(100% - 25px);
-  left:1%;
-  bottom:1px;
-  position: fixed;
-
+    width: calc(100% - 25px);
+    left: 1%;
+    bottom: -7px;
+    position: relative;
 
 }
 #replit-badge, .replit-badge{
@@ -147,7 +147,8 @@ rect:nth-of-type(1),a{
   box-shadow: none;
   width: fit-content;
   top:unset !important;
-  bottom: 0px !important;
+  bottom: 10px !important;
+  
 }
 
 .desktop-icon:hover, .desktop-icon:focus {

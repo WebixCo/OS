@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>
+      Onyx Authentication
+    </title>
+  </head>
+
+
+  <body>
+    <script src="https://replit.com/public/js/repl-auth-v2.js"></script>
+     <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+     <link href="style.css" rel="stylesheet" type="text/css" />
+    <center>
+      <h1>Log In</h1> 
+       <h3><button onclick="LoginWithReplit()"> Authenticate With Repl.it </button></h3>
+      <script type="module">const user = await getUserInfo() 
+      console.log(user)
+      window.location.href = "./desktop.html?id="+user.id+"&name="+user.name</script>
+    </center>
+  </body>
+</html>

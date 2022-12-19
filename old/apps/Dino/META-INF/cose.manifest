@@ -1,0 +1,97 @@
+Manifest-Version: 1.0
+
+Name: button.js
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: LKAmCb8vQP5rVjrFSH8JNgNPSHQ=
+SHA256-Digest: zwj05khyY8qyRcIaVJWx43URPYgkIi+QCX9RXZtlRCE=
+
+Name: button.html
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: eSRbJEd0HdaGnfsZpl5pyZ2rQbs=
+SHA256-Digest: auu4ydsd0ciCzgfrv7QWUihoF3FfBwCmSjT49rGiTu0=
+
+Name: index.js
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: 0uVUA016VBo54M4gdWpFv9nePDc=
+SHA256-Digest: rdvEQ7fjdch596IleUFmdqAwF/Xl3THp4/NjdjW4zdk=
+
+Name: index.html
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: rZItPDmeQK6vgstIogV0ISvzZlc=
+SHA256-Digest: uw1dDAjnNG9CTUfDdtobWL/wSXJMnWWVlJgMH+G+Ijg=
+
+Name: manifest.json
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: R7/A0iGljn0RFHtPurZoC5+9E3w=
+SHA256-Digest: 2K4BpFw0ElYH0yRvzvJ6GIMA4gIGPKeSrzzJsdT5Ygs=
+
+Name: indox.html
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: rpRZxHsAtp3GKcQBgSnjMWOVEZI=
+SHA256-Digest: 4uyU9PCsiq1nlnGmnbxVtp/JodRQbMlv7Jvjcn/ly28=
+
+Name: index.css
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: 6XbOr8iaN3Q4MN6gTPxDsrFtq2g=
+SHA256-Digest: fE214sqrx6/EXcbunoJfvJ4BqTRDtF62oMQhkm7kTN4=
+
+Name: icon-big.png
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: URQ4yFxEipG4h7kafXSBXtUiCaI=
+SHA256-Digest: JXJCRMaFJ4xPOZ24u3Se16xd8xzT89t3xQU5wlNdTy4=
+
+Name: icon.png
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: 25VPK+nOPybF0p0EcT0oHr7IsIA=
+SHA256-Digest: 9ZRGSNQ834BvCgU4mwVpo5GA+Kp0pBjdiLEBWDc74bk=
+
+Name: FullSizeRender.jpg
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: BrCP/Tu3HPeeAR0JUT44qDOSHVw=
+SHA256-Digest: kEgco0D391pMJ1ZFaP/ML934lOhe7UrhudXnJeAtY9M=
+
+Name: 200-error-offline.png
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: LA8G5cc10ko65/57eb2DQswtdpw=
+SHA256-Digest: Sf65zYV9OU86vR2rF2Lto4hgyIrlSrAIrpapuhkTFms=
+
+Name: assets/offline-sprite-1x.png
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: W36kjCc2ebPYDVmxvxJPlNEROEU=
+SHA256-Digest: 6K4i9q7AX04yHEgGyF3S4vhr/CADqaVyNicudsfDzt0=
+
+Name: assets/offline-sprite-2x.png
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: +U3P6ln3yQQ7SEuNdt2R1tGfc8Q=
+SHA256-Digest: QGTG79g4eldZeGZ9YxlU/RUPYdyJRdaPWEklcRgndIY=
+
+Name: assets/default_100_percent/100-disabled.png
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: 2Vr/jy/nA+4auM30iKuIYjjfPgQ=
+SHA256-Digest: 6q0s70g7xVbo2wSG38QNFlCNK0GGijWAlP8/tfQdsbI=
+
+Name: assets/default_100_percent/100-error-offline.png
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: gvsyQTrwo9MNsEDhbPZ0NajSVCs=
+SHA256-Digest: DSZwjko2AXPbempeguwrW5VjH+uIanazQ9uulR7OhWU=
+
+Name: assets/default_100_percent/100-offline-sprite.png
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: yTPYTENrSdGA3ZRTE/vXDgxPwSU=
+SHA256-Digest: 4wZwXJlmdtsB9Acu09bzPYkImoSKsLKgugei2GbsMJ8=
+
+Name: assets/default_200_percent/200-disabled.png
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: ySPC4nMlBmoal+77uQDH/v3ai10=
+SHA256-Digest: YsxAmDh64rLttrC7/nShcpE8rUPghPPlVZydU97Qeoo=
+
+Name: assets/default_200_percent/200-error-offline.png
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: 7vZfxcCGw8TpPt8C1jz5tsmQRMw=
+SHA256-Digest: Z/5yEGnoB4F9WWd1ic4DTTq4/R9ydocnUsCwmQyRQMM=
+
+Name: assets/default_200_percent/200-offline-sprite.png
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: sfD/e5PqclzWhqUWMKcoyPvIxto=
+SHA256-Digest: swEf0W5DzYYLl4LE6v53wcxA2i4Pbi5epUfZjW76yHk=
+

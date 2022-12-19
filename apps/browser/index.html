@@ -11,17 +11,17 @@
   <title>Browser</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<link
+  <link
     href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
   <style>
-    *{
+    * {
       font-family: 'Roboto', sans-serif !important;
     }
   </style>
   <style>
-    *{
-      cursor:url(cursor.cur), auto!important;
+    * {
+      cursor: url(cursor.cur), auto !important;
     }
   </style>
   <style>
@@ -31,7 +31,7 @@
       margin: 0px;
       background: none;
       overflow: hidden;
-      
+
     }
 
     ::placeholder {
@@ -48,56 +48,49 @@
 
 <body>
   <style>
-    *{
-      cursor:url(cursor.cur), auto!important;
+    * {
+      cursor: url(cursor.cur), auto !important;
     }
   </style>
   <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-  
-  <input id="url" style="width:97%;height:20px; padding: 0px; background: none; color:white; text-align: center;font-size:x-large;top:0px;"
+
+  <input id="url"
+    style="width:97%;height:20px; padding: 0px; background: none; color:white; text-align: center;font-size:x-large;top:0px;"
     placeholder="URL">
-  <button style="top:0vh;right:0%;position: absolute; padding:0px;height:23px;font-size:x-large;background:none;color:white;width:3%;border:0px;z-index:999999" id="gobtn" onclick="urlChange()">></button>
+  <button
+    style="top:0vh;right:0%;position: absolute; padding:0px;height:23px;font-size:x-large;background:none;color:white;width:3%;border:0px;z-index:999999"
+    id="gobtn" onclick="urlChange()">></button>
   <iframe onload="updatebox()" id="browser" allowfullscreen style="width:100%; min-height:97vh !important;"
-    src="./browsernewtab.html" frameborder=0></iframe>
+    src="browsernewtab.html" frameborder=0></iframe>
   <script>
     function urlChange() {
-      
-      try {
-        document.getElementById('browser').src = document.getElementById('url').value
-      }
-      catch(err) {
-        document.getElementById('browser').src = 'https://corsproxy.io/?' + encodeURIComponent(document.getElementById('url').value)
-      }
+      document.getElementById('browser').src = 'https://onyxos.samdevsapps.repl.co/service/' + encodeURIComponent(document.getElementById('url').value)
     }
-      
-    
+
+
     function updatebox() {
       url = document.getElementById('browser').contentWindow.location.href
-      if(url.includes(window.location.pathname.split("index.html")[0])) {
+      if (!url.includes("/service/")) {
         console.log("internal page")
-        if(url.includes("browsernewtab.html")){
+        if (url.includes("browsernewtab.html")) {
           document.getElementById('url').value = ""
           document.getElementById('url').placeholder = "Search or type a URL"
         }
-        if(url.includes("browserhelp.html")){
+        if (url.includes("browserhelp.html")) {
           document.getElementById('url').value = "flame://help"
         }
-        if(url.includes("helpfiles")){
-          
-        }
-      } else{
-        try {
-          document.getElementById("url").value = document.getElementById('browser').contentWindow.location.href
-        }
-        catch(err) {
-          document.getElementById("url").value = "URL Unaccessible"
-        }
-      }
-      
-    }
+        if (url.includes("helpfiles")) {
 
+        }
+      } else {
+        document.getElementById("url").value = decodeURIComponent(document.getElementById("browser").contentWindow.location.href.split("/service/")[1])
+
+      }
+
+    }
+    setInterval(updatebox, 1000);
   </script>
 </body>
 

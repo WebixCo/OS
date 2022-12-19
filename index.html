@@ -1,6 +1,92 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, .9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            margin: 0px;
+            padding: 0px;
+            font-family: Roboto;
+            color: white;
+            font-size: larger;
+        }
+
+        :root {
+            --animate-delay: 0.5s;
+        }
+
+        .outer-circle {
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(19,19,19);
+            margin: auto;
+            position: absolute;
+            
+            top: 435px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+        }
+
+        .inner-circle {
+            border-radius: inherit;
+            background-image: conic-gradient(rgba(0,0,0,0), #191919, rgb(255, 255, 255));
+            position: absolute;
+            border: 2px solid rgb(56, 56, 56);
+            z-index: -1;
+            margin: auto;
+            top: -0.8rem;
+            bottom: -0.8rem;
+            left: -0.8rem;
+            right: -0.8rem;
+            
+        }
+        svg{
+            animation: circle-anim 2s linear infinite;
+            scale: 2;
+        }
+        @keyframes circle-anim {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+        <title>OnyxOS is booting... Please wait.</title>
+</head>
 <body>
     <script>
         href= window.location.href
-        window.location.href = 'https://onyxauth.samdevsapps.repl.co/OS%20New.html?'+href.substring(0, href.lastIndexOf('/')) + "/";
+        function boot(){
+            window.location.href = 'https://onyxauth.samdevsapps.repl.co/OS%20New.html?'+href.substring(0, href.lastIndexOf('/')) + "/"
+        }
+        setTimeout(boot, 2000)
+        
     </script>
+    <center>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <img src="favicon.png"
+            style="width:calc(225px);animation-iteration-count:infinite;"
+            class="animate__animated animate__swing animate__slower ">
+        <h1>OnyxOS</h1> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34">
+            <path d="m 16.977523,0.24095147 c -9.2629169,0 -16.73280045,7.51449143 -16.73280045,16.77740253 0,9.262912 7.46988355,16.777403 16.73280045,16.777403 9.262917,0 16.777413,-7.514491 16.777413,-16.777403 0,-9.2629111 -7.514496,-16.77740253 -16.777413,-16.77740253 z m 0,4.14972823 c 6.966927,0 12.627682,5.6607523 12.627682,12.6276743 0,6.966923 -5.660755,12.583053 -12.627682,12.583053 -6.966937,0 -12.5830596,-5.61613 -12.5830596,-12.583053 0,-6.966922 5.6161226,-12.6276743 12.5830596,-12.6276743 z" style="color:#000000;fill:#000000;fill-opacity:0.08333333;stroke:#565656;stroke-width:0.7;stroke-opacity:0.19607843"/>
+            <path d="M 31.677259,17.003529 A 14.680208,14.680199 0 0 1 20.796571,31.183505" style="fill:none;stroke:#3366bb;stroke-width:2.2583456;stroke-linecap:round"/>
+        </svg>
+    </center>
 </body>

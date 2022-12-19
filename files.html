@@ -46,16 +46,17 @@
             list-style: none;
             padding: 10px;
             border-radius: 25px;
-            background-color: lightgray;
+            background-color: #00000090;
             margin-bottom: 10px;
-            box-shadow: 3px 3px 3px lightgray;
+            box-shadow: 3px 3px 3px black;
+          color:white;
         }
 
         li:hover {
-            background-color: grey;
+            background-color: #14145a90;
         }
 
-        button {
+        button:nth-of-type(1),button:nth-of-type(2) {
             font-size: larger;
             border-radius: 25px;
             border: none;
@@ -66,13 +67,50 @@
             box-shadow: 3px 3px 3px black;
             color: white;
             margin: 5px;
+            text-overflow: clip !important;
+            font-family: sans-serif !important;
+            font-size:0px;
+            -webkit-transition: width 0.7s ease-in-out;
+            -moz-transition: width 0.7s ease-in-out;
+            -o-transition: width 0.7s ease-in-out;
+            transition: width 0.7s ease-in-out;
+          animation: size2 0.5s ease-in-out 1;
+          
         }
+      button > p{
+        
+      }
+      @keyframes mymove {
+        100% {font-size:initial;}
+        
+}
+      @keyframes size {
 
+
+  to {
+    font-size:initial;
+
+  }
+}
+            @keyframes size2{
+  from {
+    font-size:initial;
+  }
+
+  to {
+    font-size:0px;
+
+  }
+}
+        button > p{text-overflow: clip !important;}
         button:hover {
             background-color: 00000050;
             color: white;
             font-weight: bold;
             box-shadow: 3px 0px 10px grey;
+            width:25% !important;
+          animation: size 0.5s ease-in-out 1;
+          font-size:initial;
         }
 
         hr {
@@ -85,7 +123,58 @@
 
         .icon {
             font-family: SegoeIcons;
+          font-style: normal;   
+          font-size:initial !important;
         }
+      button#deletetoggle[aria-pressed='true'] {
+        background-color: darkgray;
+        background-color: 00000050;
+        color: white;
+        font-weight: bold;
+        width:auto;
+        box-shadow: 3px 0px 10px grey;
+        font-size: initial;
+                -webkit-transition: width 0.5s ease-in-out !important;
+        -moz-transition: width 0.5s ease-in-out !important;
+        -o-transition: width 0.5s ease-in-out !important;
+        transition: width 0.5s ease-in-out !important;
+        
+    }
+      button#deletetoggle[aria-pressed='false'] {
+      animation: size2 0.5s ease-in-out 1;
+    }
+
+    button#deletetoggle {
+        font-size: larger;
+        border-radius: 25px;
+        border: none;
+        padding: 10px;
+        width: 50px;
+        height: 50px;
+        background-color: #00000090;
+        box-shadow: 3px 3px 3px black;
+        color: white;
+        margin: 5px;
+        text-overflow: clip !important;
+        font-family: sans-serif !important;
+        font-size: 0px;
+        -webkit-transition: width 0.5s ease-in-out !important;
+        -moz-transition: width 0.5s ease-in-out !important;
+        -o-transition: width 0.5s ease-in-out !important;
+        transition: width 0.5s ease-in-out !important;
+        
+
+    }
+
+    button#deletetoggle:hover {
+        background-color: 00000050;
+        color: white;
+        font-weight: bold;
+        box-shadow: 3px 0px 10px grey;
+        width: 25% !important;
+        animation: size 0.5s ease-in-out 1;
+        font-size: initial;
+    }
     </style>
 </head>
 
@@ -94,7 +183,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <Center>
-        <buttons><button onclick="up()" class="icon"></button> <button onclick="load()" class="icon"></button>
+        <buttons><button onclick="up()"><i class="icon"></i> Navigate Up</button> <button onclick="load()"><i class="icon"></i> Go to root(/)</button> <button id="deletetoggle" aria-pressed="false" ><i class="icon"></i> Delete</button>
         </buttons>
     </Center>
     <hr style="color:white; width:100vw">
@@ -163,6 +252,14 @@
         }
         load()
     </script>
+  <script type="text/javascript">
+    const dtoggle = document.querySelector('#deletetoggle');
+
+    dtoggle.addEventListener('click', (e) => {
+        let pressed = e.target.getAttribute('aria-pressed') == 'true' ? 'false' : 'true';
+        e.target.setAttribute('aria-pressed', pressed);
+    });
+</script>
 </body>
 
 </html>

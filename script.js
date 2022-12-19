@@ -40,10 +40,10 @@ function refreshTimeDesk() {
   const formattedString = dateString.replace(", ", " - ");
   timeDisplay.textContent = "It's " + formattedString.split(" - ")[1];
 }
-setInterval(refreshTimeDesk, 1000);
+ 
 function openWeb() {
   new WinBox("Flame Browser", {
-    url: "./apps/browser/index.html",
+    url: "apps/browser",
     icon: "apps/browser/flame.png",
     bottom: 40,
   });
@@ -81,7 +81,13 @@ function opencookie() {
   });
 }
 
-function openPnt(fix) {
+function openPnt(){    var paintz = new WinBox("PaintZ", {
+  url: "apps/paintz/index-wip.html",
+  icon: "apps/paintz/images/logo/favicon.ico",
+  bottom: 40,
+});}
+
+function openPntOld(fix) {
   if(fix === "yea"){
     var paintz = new WinBox("PaintZ", {
       url: "https://paintz.app/",
@@ -139,6 +145,8 @@ function runFile(content, title){
     bottom: 40,
   });
 }
+
+
 
 const registerServiceWorker = async () => {
         if ("serviceWorker" in navigator) {

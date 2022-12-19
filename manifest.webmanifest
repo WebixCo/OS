@@ -2,8 +2,8 @@
     "theme_color": "#404ae3",
     "background_color": "#404ae3",
     "display": "fullscreen",
-    "scope": "/OS/",
-    "start_url": "/OS/",
+    "scope": "/",
+    "start_url": "/",
     "name": "OnyxOS",
     "short_name": "OnyxOS",
     "icons": [
