@@ -3,7 +3,7 @@
     "background_color": "#404ae3",
     "display": "fullscreen",
     "scope": "/",
-    "start_url": "/",
+    "start_url": "/index.html",
     "name": "OnyxOS",
     "short_name": "OnyxOS",
     "icons": [
