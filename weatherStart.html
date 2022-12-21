@@ -44,7 +44,7 @@
             width: 75vw !important;
             height: 70vh !important;
 
-            top: 60px !important;
+            top: 30px !important;
             left: 10vw !important;
             position: fixed !important;
             font-size: xx-large !important;
@@ -52,7 +52,7 @@
         }
 
         * {
-            font-size: xx-large !important;
+            font-size: large !important;
         }
 
         img {
@@ -71,7 +71,16 @@
             position: absolute;
             right: 3px;
             top: 3px;
-            font-size: x-large !important;
+            font-size: initial !important;
+        }
+        @media only screen and (max-width: 600px)  {
+            .weatherwidget-io{
+                height: fit-content;
+            }
+            *{
+                height: fit-content;
+                overflow: scroll;
+            }
         }
     </style>
     <!--[if lt IE 7]>

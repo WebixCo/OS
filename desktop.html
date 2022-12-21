@@ -68,11 +68,12 @@
               Clicker</button></div>
           <div class="start-icon"><br><button onclick="openDino();document.getElementById('start').click()"><img
                 src="apps/Dino/icon.png" height="40px"><br>Dino </button></div>
+                <br class="mobilebreak">
           <div class="start-icon"><br><button onclick="openFileMgr();document.getElementById('start').click()"><img
                 src="files.png" height="40px"><br>Files</button></div>
           <div class="start-icon"><br><button onclick="openPnt('a');document.getElementById('start').click()"><img
-                src="apps/paintz/images/logo/favicon.ico" height="40px"><br>PaintZ</button></div><br>
-          <div class="start-icon"><br><button onclick="openweatherapp();document.getElementById('start').click()"><img
+                src="apps/paintz/images/logo/favicon.ico" height="40px"><br>PaintZ</button></div><br class="desktopbreak">
+          <div class="start-icon weatherStart"><br><button onclick="openweatherapp();document.getElementById('start').click()"><img
                 src="WEATHERICON.png" height="40px"><br>Weather</button></div><div class="start-icon"><br><button onclick="openNotes();document.getElementById('start').click()"><img
                   src="notes.png" height="40px"><br>Notes</button></div><div class="start-icon"><br><button onclick="openAssistant();document.getElementById('start').click()"><img
                     src="assistant.png" height="40px"><br>Assistant</button></div>
@@ -80,9 +81,9 @@
                       src="sync.png" height="40px"><br>Sync</button></div>
                   
           
-        </center>
+        </center><center>
         <iframe scrolling="no" onerror="this.srcdoc = 'ERROR: No Internet Connection'; this.src = ''" src="https://onyxassistant.samdevsapps.repl.co/onyxnotes/widget.html" width="45%" height="45%"
-          frameborder="0"> </iframe><iframe src="weatherStart.html" width="45%" height="45%" frameborder="0"> </iframe>
+          frameborder="0"> </iframe><iframe src="weatherStart.html" width="45%" height="45%" frameborder="0"> </iframe></center>
       </div>
     </div>
     <div id="assistantpopup" hidden

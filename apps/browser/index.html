@@ -66,7 +66,7 @@
     src="browsernewtab.html" frameborder=0></iframe>
   <script>
     function urlChange() {
-      document.getElementById('browser').src = 'https://onyxos.samdevsapps.repl.co/service/' + encodeURIComponent(document.getElementById('url').value)
+      document.getElementById('browser').src = 'https://corsproxy.io/?' + encodeURIComponent(document.getElementById('url').value)
     }
 
 
@@ -85,7 +85,7 @@
 
         }
       } else {
-        document.getElementById("url").value = decodeURIComponent(document.getElementById("browser").contentWindow.location.href.split("/service/")[1])
+        document.getElementById("url").value = decodeURIComponent(document.getElementById("browser").contentWindow.location.href.split("https://corsproxy.io/?")[1])
 
       }
 
