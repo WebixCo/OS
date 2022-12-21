@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OnyxDial</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <style>
+            button{
+                width: 33.3333333333%;
+                height: calc(25vh - 56px);
+                font-size: xx-large;
+            }
+            .bksp{
+                position: absolute;
+                top:28px;
+                right:10px;
+                font-size: x-large;
+            }
+        </style>
+        <input type="tel" id="phonenumber" style="width:calc(100% - 8px);height:50px;margin-bottom: 5px;"></input>
+        <a class="bksp" onclick='document.getElementById("phonenumber").value = ""'>⌫</a>
+        <button onclick="addToTxb(this.innerText)">1</button><button onclick="addToTxb(this.innerText)">2</button><button onclick="addToTxb(this.innerText)">3</button><br>
+        <button onclick="addToTxb(this.innerText)">4</button><button onclick="addToTxb(this.innerText)">5</button><button onclick="addToTxb(this.innerText)">6</button><br>
+        <button onclick="addToTxb(this.innerText)">7</button><button onclick="addToTxb(this.innerText)">8</button><button onclick="addToTxb(this.innerText)">9</button><br>
+        <button onclick="addToTxb(this.innerText)">&plus;</button><button onclick="addToTxb(this.innerText)">0</button><button onclick="call()">✆</button><br>
+        <a hidden id="callHref"></a>
+    <script type="text/javascript">
+        function addToTxb(txt){
+            document.getElementById("phonenumber").value = document.getElementById("phonenumber").value + String(txt)
+        }
+        function call(){
+            document.getElementById("callHref").href = "tel:" + document.getElementById("phonenumber").value
+            document.getElementById("callHref").click();
+        }
+    </script>
+    </body>
+</html>
