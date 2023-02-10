@@ -85,7 +85,8 @@
 
         }
       } else {
-        document.getElementById("url").value = decodeURIComponent(document.getElementById("browser").contentWindow.location.href.split("https://corsproxy.io/?")[1])
+        if(document.activeElement != document.getElementById("url")){document.getElementById("url").value = decodeURIComponent(document.getElementById("browser").contentWindow.location.href.split("https://corsproxy.io/?")[1])}
+        
 
       }
 
