@@ -43,7 +43,7 @@ function refreshTimeDesk() {
  
 function openWeb() {
   new WinBox("Flame Browser", {
-    url: "apps/browser",
+    url: "apps/browser/webviewVersion.html",
     icon: "apps/browser/flame.png",
     bottom: 40,
   });
